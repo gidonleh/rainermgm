@@ -116,3 +116,57 @@ $(function () {
 //     }
 
 // }
+
+// firebase
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBDBXgYXgeNis8JDgnw3gymFiU311pWpF0",
+    authDomain: "rainer-mgm.firebaseapp.com",
+    databaseURL: "https://rainer-mgm.firebaseio.com",
+    projectId: "rainer-mgm",
+    storageBucket: "rainer-mgm.appspot.com",
+    messagingSenderId: "549972396102",
+    appId: "1:549972396102:web:b9d8f6883b74ec7a7e2247"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //reference messages collection
+let messagesRef = firebase.database().ref('rainer-mgm');
+
+function onMessageCreate(){
+  functions.database.ref('rainer-mgm').onCreate()
+}
+
+// Listen for form submit
+
+document.getElementById('contactform').addEventListener('submit', submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  //get values
+  let name = getInputVal('name');
+  let email = getInputVal('email');
+  let phone = getInputVal('phone');
+  let message = getInputVal('message');
+
+  saveMessage(name, email, phone, message);
+
+  document.getElementById('contactform').reset();
+}
+// function to get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+
+// save message to firebase
+function saveMessage(name, email, phone, message){
+  let newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    name: name,
+    email: email,
+    phone: phone,
+    message: message
+  }) 
+}

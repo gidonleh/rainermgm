@@ -290,33 +290,33 @@
         </header>
         <div class="row">
           <div class="col-lg-6">
-            <form action="contactform.php" method="post" class="contact-form">
+            <form id="contactform">
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="firstName">Имя *</label>
-                  <input id="firstName" type="text" name="name" placeholder="Enter your firstname" class="form-control">
+                  <input id="name" type="text" name="name" placeholder="ваше имя здесь" class="form-control" required oninvalid="setCustomValidity('Пожалуйста, введите Ваше имя ')">
                 </div>
                 <div class="form-group col-lg-6">
-                  <label for="lastName">Фамилия *</label>
-                  <input id="lastname" type="text" name="lastname" placeholder="Enter your lastname" class="form-control">
+                  <label for="phone">Телефон *</label>
+                  <input id="phone" type="text" name="phone" placeholder="ваш номер телефона здесь" class="form-control" required oninvalid="setCustomValidity('пожалуйста введите ваш номер телефона')">
                 </div>
                 <div class="form-group col-lg-12">
-                  <label for="email">Эл. адрес *</label>
-                  <input id="email" type="email" name="mail" placeholder="Enter your email" class="form-control">
+                  <label for="email">Эл. адрес </label>
+                  <input id="email" type="email" name="email" placeholder="ваш электронный адрес здесь" class="form-control" oninvalid="setCustomValidity('Введенный вами адрес электронной почты недействителен')">
                 </div>
                 <div class="form-group col-lg-12">
                   <label for="message">ваше сообщение к нам *</label>
-                  <textarea id="message" name="message" placeholder="Enter your message" rows="4" class="form-control"></textarea>
+                  <textarea id="message" name="message" placeholder="ваш запрос здесь" rows="4" class="form-control" required oninvalid="setCustomValidity('пожалуйста, объясните свою потребность')"></textarea>
                 </div>
                 <div class="form-group col-lg-12">
-                  <button type="submit" class="btn btn-primary w-100">Отправить сообщение</button>
+                  <button type="submit" name="submit" id="submit" class="btn btn-primary w-100">Отправить сообщение</button>
                 </div>
               </div>
             </form>
           </div>
           <div class="col-lg-6">
-            <p>Смело обращайтесь ко мне в любое время дня. По выходным я доступен только для экстренных случаев.</p>
-            <p>Вы можете связаться со мной через эту форму или по моему мобильному телефону, который вы можете найти внизу этой страницы.</p>
+            <p class="contact-section">Смело обращайтесь ко мне в любое время дня. По выходным я доступен только для экстренных случаев.</p>
+            <p class="contact-section">Вы можете связаться со мной через эту форму или по моему мобильному телефону, который вы можете найти внизу этой страницы.</p>
             <ul class="mb-0 list-inline text-center">
               <li class="list-inline-item"><a href="https://www.facebook.com/michael.rainer.16100" class="social-link social-link-facebook"><i class="fab fa-facebook-f"></i></a></li>
               <li class="list-inline-item"><a href="mailto:rainermgm@gmail.com" class="social-link social-link-email"><i class="fas fa-envelope"></i></a></li>
@@ -361,6 +361,9 @@
       </div>
     </footer>
     <!-- JavaScript files-->
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase.js"></script>
+    <!-- others -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/lightbox2/js/lightbox.min.js"></script>

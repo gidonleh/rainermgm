@@ -179,3 +179,7 @@
 .bgbrown {
 	background-color: #bc986a;
 }
+
+.contact-section, label {
+	font-size: 1.4em;
+}
