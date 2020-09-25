@@ -154,7 +154,11 @@ function submitForm(e) {
   saveMessage(name, email, phone, message);
 
   document.getElementById('contactform').reset();
+  
 }
+
+// function to hide the form and show V that confirms it has been sent
+
 // function to get form values
 function getInputVal(id){
   return document.getElementById(id).value;
