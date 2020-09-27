@@ -198,4 +198,8 @@
 	-o-transition: opacity .5s linear;
   }
 
- 
+.language-button{
+	position: absolute;
+	top: 1%;
+	left: 4%;
+}
